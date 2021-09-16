@@ -65,7 +65,7 @@ skill:
                 skillCD*=0.8
             }
             If (currentData["character", "ascension"]>=4) { ;Fearnaught
-                If (burstUPTimeStamp[num]>A_TickCount) {
+                If (timestamps["burst", "up", characterNum]>A_TickCount) {
                     skillCD*=0.5
                 }
             }

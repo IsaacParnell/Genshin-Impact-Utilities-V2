@@ -269,7 +269,8 @@ updateCurrentParty() {
         If (A_Index>4) {
             Break
         }
-        If (currentData["party", A_index, "element"] == "Anemo") {
+        characterCodeName:=currentData["party", A_index] 
+        If (configData["character", characterCodeName, "element"] == "Anemo") {
             anemoCount++
         }
     }
