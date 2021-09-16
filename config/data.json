@@ -1,0 +1,414 @@
+{
+    "character": {
+        "Albedo": {
+            "codeName": "Albedo",
+            "characterName": "Albedo",
+            "element": "Geo",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Amber": {
+            "codeName": "Amber",
+            "characterName": "Amber",
+            "element": "Pyro",
+            "weaponType": "Bow",
+            "weapon": "Hunter Bow",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Ayaka": {
+            "codeName": "Ayaka",
+            "characterName": "Kamisato Ayaka",
+            "element": "Cryo",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Barbara": {
+            "codeName": "Barbara",
+            "characterName": "Barbara",
+            "element": "Hydro",
+            "weaponType": "Catalysts",
+            "weapon": "Apprentice Notes",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Beidou": {
+            "codeName": "Beidou",
+            "characterName": "Beidou",
+            "element": "Electro",
+            "weaponType": "Claymore",
+            "weapon": "Waster Greatsword",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Bennett": {
+            "codeName": "Bennett",
+            "characterName": "Bennett",
+            "element": "Pyro",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Chongyun": {
+            "codeName": "Chongyun",
+            "characterName": "Chongyun",
+            "element": "Cryo",
+            "weaponType": "Claymore",
+            "weapon": "Waster Greatsword",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Diluc": {
+            "codeName": "Diluc",
+            "characterName": "Diluc",
+            "element": "Pyro",
+            "weaponType": "Claymore",
+            "weapon": "Waster Greatsword",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Diona": {
+            "codeName": "Diona",
+            "characterName": "Diona",
+            "element": "Cryo",
+            "weaponType": "Bow",
+            "weapon": "Hunter Bow",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Eula": {
+            "codeName": "Eula",
+            "characterName": "Eula",
+            "element": "Cryo",
+            "weaponType": "Claymore",
+            "weapon": "Waster Greatsword",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Fischl": {
+            "codeName": "Fischl",
+            "characterName": "Fischl",
+            "element": "Electro",
+            "weaponType": "Bow",
+            "weapon": "Hunter Bow",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Ganyu": {
+            "codeName": "Ganyu",
+            "characterName": "Ganyu",
+            "element": "Cryo",
+            "weaponType": "Bow",
+            "weapon": "Hunter Bow",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Hu_Tao": {
+            "codeName": "Hu_Tao",
+            "characterName": "Hu Tao",
+            "element": "Pyro",
+            "weaponType": "Polearm",
+            "weapon": "Beginner Protector",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Jean": {
+            "codeName": "Jean",
+            "characterName": "Jean",
+            "element": "Anemo",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Kaeya": {
+            "codeName": "Kaeya",
+            "characterName": "Kaeya",
+            "element": "Cryo",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Kazuha": {
+            "codeName": "Kazuha",
+            "characterName": "Kaedehara Kazuha ",
+            "element": "Anemo",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Keqing": {
+            "codeName": "Keqing",
+            "characterName": "Keqing",
+            "element": "Electro",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Klee": {
+            "codeName": "Klee",
+            "characterName": "Klee",
+            "element": "Pyro",
+            "weaponType": "Catalysts",
+            "weapon": "Apprentice Notes",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Lisa": {
+            "codeName": "Lisa",
+            "characterName": "Lisa",
+            "element": "Electro",
+            "weaponType": "Catalysts",
+            "weapon": "Apprentice Notes",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Mona": {
+            "codeName": "Mona",
+            "characterName": "Mona",
+            "element": "Hydro",
+            "weaponType": "Catalysts",
+            "weapon": "Apprentice Notes",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Ningguang": {
+            "codeName": "Ningguang",
+            "characterName": "Ningguang",
+            "element": "Geo",
+            "weaponType": "Catalysts",
+            "weapon": "Apprentice Notes",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Noelle": {
+            "codeName": "Noelle",
+            "characterName": "Noelle",
+            "element": "Geo",
+            "weaponType": "Claymore",
+            "weapon": "Waster Greatsword",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Qiqi": {
+            "codeName": "Qiqi",
+            "characterName": "Qiqi",
+            "element": "Cryo",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Raiden": {
+            "codeName": "Raiden",
+            "characterName": "Raiden Shogun",
+            "element": "Electro",
+            "weaponType": "Polearm",
+            "weapon": "Beginner Protector",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Razor": {
+            "codeName": "Razor",
+            "characterName": "Razor",
+            "element": "Electro",
+            "weaponType": "Claymore",
+            "weapon": "Waster Greatsword",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Rosaria": {
+            "codeName": "Rosaria",
+            "characterName": "Rosaria",
+            "element": "Cryo",
+            "weaponType": "Polearm",
+            "weapon": "Beginner Protector",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Sara": {
+            "codeName": "Sara",
+            "characterName": "Kujou Sara",
+            "element": "Electro",
+            "weaponType": "Bow",
+            "weapon": "Hunter Bow",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Sayu": {
+            "codeName": "Sayu",
+            "characterName": "Sayu",
+            "element": "Anemo",
+            "weaponType": "Claymore",
+            "weapon": "Waster Greatsword",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Sucrose": {
+            "codeName": "Sucrose",
+            "characterName": "Sucrose",
+            "element": "Anemo",
+            "weaponType": "Catalysts",
+            "weapon": "Apprentice Notes",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Tartaglia": {
+            "codeName": "Tartaglia",
+            "characterName": "Tartaglia",
+            "element": "Hydro",
+            "weaponType": "Bow",
+            "weapon": "Hunter Bow",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Traveler_Anemo": {
+            "codeName": "Traveler_Anemo",
+            "characterName": "Traveler",
+            "element": "Anemo",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Traveler_Electro": {
+            "codeName": "Traveler_Electro",
+            "characterName": "Traveler",
+            "element": "Electro",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Traveler_Geo": {
+            "codeName": "Traveler_Geo",
+            "characterName": "Traveler",
+            "element": "Geo",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Venti": {
+            "codeName": "Venti",
+            "characterName": "Venti",
+            "element": "Anemo",
+            "weaponType": "Bow",
+            "weapon": "Hunter Bow",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Xiangling": {
+            "codeName": "Xiangling",
+            "characterName": "Xiangling",
+            "element": "Pyro",
+            "weaponType": "Polearm",
+            "weapon": "Beginner Protector",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Xiao": {
+            "codeName": "Xiao",
+            "characterName": "Xiao",
+            "element": "Anemo",
+            "weaponType": "Polearm",
+            "weapon": "Beginner Protector",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Xingqiu": {
+            "codeName": "Xingqiu",
+            "characterName": "Xingqiu",
+            "element": "Hydro",
+            "weaponType": "Sword",
+            "weapon": "Dull Blade",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Xinyan": {
+            "codeName": "Xinyan",
+            "characterName": "Xinyan",
+            "element": "Pyro",
+            "weaponType": "Claymore",
+            "weapon": "Waster Greatsword",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Yanfei": {
+            "codeName": "Yanfei",
+            "characterName": "Yanfei",
+            "element": "Pyro",
+            "weaponType": "Catalysts",
+            "weapon": "Apprentice Notes",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Yoimiya": {
+            "codeName": "Yoimiya",
+            "characterName": "Yoimiya",
+            "element": "Pyro",
+            "weaponType": "Bow",
+            "weapon": "Hunter Bow",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Zhongli": {
+            "codeName": "Zhongli",
+            "characterName": "Zhongli",
+            "element": "Geo",
+            "weaponType": "Polearm",
+            "weapon": "Beginner Protector",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        }
+    }
+}
