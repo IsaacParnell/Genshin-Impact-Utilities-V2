@@ -56,6 +56,7 @@ getConfigData() {
                     "burst": "q",
                     "interact": "f",
                     "jump": "space",
+                    "sprint": "LShift",
                     "toggleSprint": "LCtrl",
                     "jumpMacro": "XButton1",
                     "attackMacro": "XButton2"
