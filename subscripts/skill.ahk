@@ -87,14 +87,33 @@ skill:
                     break
                 }
             }
+            dionaPawDuration:=1.8
+            If (currentData["character","ascension"]>2) {
+                dionaPawDuration+=0.1
+            }
+            If (currentData["character","ascension"]>3) {
+                dionaPawDuration+=0.2
+            }
+            If (currentData["character","ascension"]>4) {
+                dionaPawDuration+=0.2
+            }
+            If (currentData["character","ascension"]>5) {
+                dionaPawDuration+=0.1
+            }
+            If (currentData["character","constellation"]>5) {
+                dionaPawDuration+=0.3
+            }
+            If (dionaPawDuration>2.4) {
+                dionaPawDuration:=2.4
+            }
             If (A_TickCount-eDurationStartTime>=150) {
                 skillCD:=15
                 skillCastDelay:=0.4
-                timestamps["shield", "diona"] := 1.8*5*1000+A_TickCount+1000
+                timestamps["shield", "diona"] := dionaPawDuration*5*1000+A_TickCount+1000
             } else {
                 skillCD:=6
                 skillCastDelay:=0.05
-                timestamps["shield", "diona"] := 1.8*2*1000+A_TickCount+500
+                timestamps["shield", "diona"] := dionaPawDuration*2*1000+A_TickCount+500
             }
         Case "Eula":
             While getkeystate(skillKey, "P") {
