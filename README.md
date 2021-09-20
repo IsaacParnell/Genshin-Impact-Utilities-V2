@@ -3,12 +3,13 @@
 Work in Progress. I am new to GitHub
 Designed for 1920x1080 monitors
 
-Displays
-    Skill Cooldown
-    Skill Uptime
-    Shield Uptime
-    Burst Uptime
-    Weapon buffs and Artifact buffs (on request)
+Displays:
+
+- Skill Cooldown
+- Skill Uptime
+- Shield Uptime
+- Burst Uptime
+- Weapon buffs and Artifact buffs (on request)
 
 Skill Cooldown just left of name.
 Skill Uptime below Characters.
