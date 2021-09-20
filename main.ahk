@@ -14,38 +14,42 @@ global configData := getConfigData()
 global currentData := getDefaultCurrentData()
 global timestamps := getDefaultTimestamp()
 
-Loop, {
-    If (A_Index>4) {
-        Break
-    }
+Loop, 4 {
     characterName := partyData["party", 1, A_Index]
     currentData["party", A_Index] := configData["character", characterName, "codeName"]
 }
 
 global skillKey := configData["keybind", "skill"]
 global burstKey := configData["keybind", "burst"]
+global interactKey := configData["keybind", "interact"]
+global jumpKey := configData["keybind", "jump"]
+global toggleSprintMacroKey := configData["keybind", "toggleSprint"]
+global jumpMacroKey := configData["keybind", "jumpMacro"]
+global attackMacroKey := configData["keybind", "attackMacro"]
+global sprintScript:=True
+
 
 HotKey, IfWinActive, ahk_exe GenshinImpact.exe
 
 HotKey ~$*%skillKey%,skill
 HotKey ~$*%burstKey%,burst
 
-Loop, {
-    If (A_Index>4) {
-        Break
-    }
+Loop, 4 {
     HotKey ~$!$%A_Index%, burstCharacterLabel
     HotKey ~$%A_Index%, changeCharacterLabel
 }
 HotKey ~$5, changeCharacterLabel
 
-Loop, {
-    If (A_Index>9) {
-        Break
-    }
+Loop, 9 {
     HotKey ~$*Numpad%A_Index%, changeCurrentPartyLabel
 }
 HotKey ~$*Numpad0,changeCurrentPartyLabel
+
+HotKey $*%interactKey%,interactMacro
+HotKey $%sprintKey%,sprintMacro
+HotKey $%jumpMacroKey%,jumpMacro
+HotKey $%toggleSprintMacroKey%,toggleSprintMacro
+HotKey $%attackMacroKey%,attackMacro ; delete this line to remove attack macro
 
 Return
 
@@ -53,6 +57,8 @@ Return
 #Include, %A_ScriptDir%\subscripts\burst.ahk
 #Include, %A_ScriptDir%\subscripts\skill.ahk
 #Include, %A_ScriptDir%\subscripts\change.ahk
+#Include, %A_ScriptDir%\subscripts\extra.ahk
+#Include, %A_ScriptDir%\subscripts\attack.ahk
 
 savePartyToFile() {
     partyNum := currentData["partyNum"]

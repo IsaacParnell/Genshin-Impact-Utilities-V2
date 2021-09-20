@@ -53,7 +53,12 @@ getConfigData() {
                 },
                 "keybind" : {
                     "skill": "e",
-                    "burst": "q"
+                    "burst": "q",
+                    "interact": "f",
+                    "jump": "space",
+                    "toggleSprint": "LCtrl",
+                    "jumpMacro": "XButton1",
+                    "attackMacro": "XButton2"
                 }
             }
         )
