@@ -21,6 +21,14 @@ Loop, 4 {
 
 global skillKey := configData["keybind", "skill"]
 global burstKey := configData["keybind", "burst"]
+global interactKey := configData["keybind", "interact"]
+global jumpKey := configData["keybind", "jump"]
+global sprintKey := configData["keybind", "sprint"]
+global toggleSprintMacroKey := configData["keybind", "toggleSprint"]
+global jumpMacroKey := configData["keybind", "jumpMacro"]
+global attackMacroKey := configData["keybind", "attackMacro"]
+global sprintScript:=True
+
 
 HotKey, IfWinActive, ahk_exe GenshinImpact.exe
 
@@ -38,12 +46,20 @@ Loop, 9 {
 }
 HotKey ~$*Numpad0,changeCurrentPartyLabel
 
+HotKey $*%interactKey%,interactMacro
+HotKey $%sprintKey%,sprintMacro
+HotKey $%jumpMacroKey%,jumpMacro
+HotKey $%toggleSprintMacroKey%,toggleSprintMacro
+HotKey $%attackMacroKey%,attackMacro ; delete this line to remove attack macro
+
 Return
 
 
 #Include, %A_ScriptDir%\subscripts\burst.ahk
 #Include, %A_ScriptDir%\subscripts\skill.ahk
 #Include, %A_ScriptDir%\subscripts\change.ahk
+#Include, %A_ScriptDir%\subscripts\extra.ahk
+#Include, %A_ScriptDir%\subscripts\attack.ahk
 
 savePartyToFile() {
     partyNum := currentData["partyNum"]
