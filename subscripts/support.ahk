@@ -150,7 +150,7 @@ getDefaultCurrentData() {
                     "Electro": "FFACFF",
                     "Dendro": "B1E92A",
                     "Geo": "FFE699",
-                    "Hydro": "80C0FF",
+                    "Hydro": "80DFFF",
                     "Pyro": "FF9999"
                 }
                 
