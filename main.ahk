@@ -14,10 +14,7 @@ global configData := getConfigData()
 global currentData := getDefaultCurrentData()
 global timestamps := getDefaultTimestamp()
 
-Loop, {
-    If (A_Index>4) {
-        Break
-    }
+Loop, 4 {
     characterName := partyData["party", 1, A_Index]
     currentData["party", A_Index] := configData["character", characterName, "codeName"]
 }
@@ -30,19 +27,13 @@ HotKey, IfWinActive, ahk_exe GenshinImpact.exe
 HotKey ~$*%skillKey%,skill
 HotKey ~$*%burstKey%,burst
 
-Loop, {
-    If (A_Index>4) {
-        Break
-    }
+Loop, 4 {
     HotKey ~$!$%A_Index%, burstCharacterLabel
     HotKey ~$%A_Index%, changeCharacterLabel
 }
 HotKey ~$5, changeCharacterLabel
 
-Loop, {
-    If (A_Index>9) {
-        Break
-    }
+Loop, 9 {
     HotKey ~$*Numpad%A_Index%, changeCurrentPartyLabel
 }
 HotKey ~$*Numpad0,changeCurrentPartyLabel

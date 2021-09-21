@@ -265,10 +265,7 @@ updateCurrentParty() {
     currentData["party"] := partyData["party", partyCodeNum]
     updateCurrentCharacter()
     anemoCount:=0
-    Loop, {
-        If (A_Index>4) {
-            Break
-        }
+    Loop, 4 {
         characterCodeName:=currentData["party", A_index] 
         If (configData["character", characterCodeName, "element"] == "Anemo") {
             anemoCount++
@@ -413,10 +410,7 @@ timeToText(timeStamp) {
 }
 
 updateTeamColors() {
-    Loop, {
-        If (A_Index>4) {
-            Break
-        }
+    Loop, 4 {
         codeName := currentData["party", A_Index]
         element := configData["character", codeName, "element"]
         elementColor := currentData["color", element]
