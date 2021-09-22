@@ -33,6 +33,7 @@ changeCurrentParty(newNum) {
             updateCurrentParty()
         }
     }
+    updateTeamColors()
 }
 
 burstCharacter(characterNum) {

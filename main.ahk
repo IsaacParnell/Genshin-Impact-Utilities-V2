@@ -103,10 +103,10 @@ init_this_file() {
     Gui add, text, x1517 y444 vp3skillCDGUI cWhite, 32.0
     Gui add, text, x1517 y541 vp4skillCDGUI cWhite, 32.0
 
-    Gui add, text, x1517 y253 vp1TartagliaGUI c80DFFF, 32.0
-    Gui add, text, x1517 y348 vp2TartagliaGUI c80DFFF, 32.0
-    Gui add, text, x1517 y444 vp3TartagliaGUI c80DFFF, 32.0
-    Gui add, text, x1517 y541 vp4TartagliaGUI c80DFFF, 32.0
+    Gui add, text, x1517 y253 vp1TartagliaGUI cWhite, 32.0
+    Gui add, text, x1517 y348 vp2TartagliaGUI cWhite, 32.0
+    Gui add, text, x1517 y444 vp3TartagliaGUI cWhite, 32.0
+    Gui add, text, x1517 y541 vp4TartagliaGUI cWhite, 32.0
     
     Gui add, text, x1592 y623 vp1skillUPGUI cWhite, 32.0
     Gui add, text, x1672 y623 vp2skillUPGUI cWhite, 32.0

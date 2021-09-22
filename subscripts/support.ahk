@@ -54,6 +54,15 @@ getConfigData() {
                 "keybind" : {
                     "skill": "e",
                     "burst": "q"
+                },
+                "color" : {
+                    "Anemo": "80FFD7",
+                    "Cryo": "99FFFF",
+                    "Electro": "FFACFF",
+                    "Dendro": "B1E92A",
+                    "Geo": "FFE699",
+                    "Hydro": "80DFFF",
+                    "Pyro": "FF9999"
                 }
             }
         )
@@ -144,14 +153,7 @@ getDefaultCurrentData() {
                     "1": "FFFFFF",
                     "2": "FFFFFF",
                     "3": "FFFFFF",
-                    "4": "FFFFFF",
-                    "Anemo": "80FFD7",
-                    "Cryo": "99FFFF",
-                    "Electro": "FFACFF",
-                    "Dendro": "B1E92A",
-                    "Geo": "FFE699",
-                    "Hydro": "80DFFF",
-                    "Pyro": "FF9999"
+                    "4": "FFFFFF"
                 },
                 "coop": {
                     "inCoop": "False",
@@ -421,13 +423,18 @@ updateTeamColors() {
     Loop, 4 {
         codeName := currentData["party", A_Index]
         element := configData["character", codeName, "element"]
-        elementColor := currentData["color", element]
+        elementColor := configData["color", element]
         currentData["color", A_Index] := elementColor
     }
     p1Color := currentData["color", 1]
     p2Color := currentData["color", 2]
     p3Color := currentData["color", 3]
     p4Color := currentData["color", 4]
+    tartagliaColor := configData["color", "hydro"]
+    GuiControl, +c%tartagliaColor%, p1TartagliaGUI
+    GuiControl, +c%tartagliaColor%, p2TartagliaGUI
+    GuiControl, +c%tartagliaColor%, p3TartagliaGUI
+    GuiControl, +c%tartagliaColor%, p4TartagliaGUI
 
     GuiControl, +c%p1Color%, p1skillCDGUI
     GuiControl, +c%p1Color%, p1skillUPGUI
@@ -459,8 +466,12 @@ updateTeamColors() {
 
 }
 
+global runForABit:=A_TickCount+3000
 updateGUI() {
-    updateTeamColors()
+    If (runForABit>A_TickCount) {
+        updateTeamColors()
+        updateCurrentCharacter()
+    }
 
     ; ******************* Skill Display *******************
     ; Player 1
