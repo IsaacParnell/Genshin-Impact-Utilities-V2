@@ -42,10 +42,12 @@ burstCharacter(characterNum) {
 }
 
 changeCharacter(newNum) {
-    If (currentData["character", "codeName"] == "Tartaglia") {
-        tartagliaOff()
-    }
     characterNum:=currentData["characterNum"]
+    If (currentData["character", "codeName"] == "Tartaglia") {
+        If (timestamps["skill", "down", characterNum]<A_TickCount) {
+            tartagliaOff()
+        }
+    }
     weapon:=currentData["character", "weapon"]
     switch weapon {
         case "Thrilling Tales of Dragon Slayers":

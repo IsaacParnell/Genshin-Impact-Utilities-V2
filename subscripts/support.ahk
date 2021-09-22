@@ -407,113 +407,67 @@ tartagliaOff() {
     }
 }
 
-timeToText(timeStamp) {
-    timeTempValue:=Round(timeStamp/1000, 1)
-    textOut:="" timeTempValue
-    If (timeTempValue<10) {
-        textOut:=A_Space . textOut
-    }
-    If (timeTempValue<0) {
-        textOut:=""
-    }
-    Return textOut
-}
-
 updateTeamColors() {
     Loop, 4 {
         codeName := currentData["party", A_Index]
         element := configData["character", codeName, "element"]
         elementColor := configData["color", element]
+        guiColor(elementColor, "p" . A_Index . "skillCDGUI")
+        guiColor(elementColor, "p" . A_Index . "skillUPGUI")
+        guiColor(elementColor, "p" . A_Index . "weaponUPGUI")
+        guiColor(elementColor, "p" . A_Index . "weaponCDGUI")
+        guiColor(elementColor, "p" . A_Index . "artifactUPGUI")
+        guiColor(elementColor, "p" . A_Index . "burstUPGUI")
         currentData["color", A_Index] := elementColor
     }
-    p1Color := currentData["color", 1]
-    p2Color := currentData["color", 2]
-    p3Color := currentData["color", 3]
-    p4Color := currentData["color", 4]
-    tartagliaColor := configData["color", "hydro"]
-    GuiControl, +c%tartagliaColor%, p1TartagliaGUI
-    GuiControl, +c%tartagliaColor%, p2TartagliaGUI
-    GuiControl, +c%tartagliaColor%, p3TartagliaGUI
-    GuiControl, +c%tartagliaColor%, p4TartagliaGUI
-
-    GuiControl, +c%p1Color%, p1skillCDGUI
-    GuiControl, +c%p1Color%, p1skillUPGUI
-    GuiControl, +c%p1Color%, p1weaponUPGUI
-    GuiControl, +c%p1Color%, p1weaponCDGUI
-    GuiControl, +c%p1Color%, p1artifactUPGUI
-    GuiControl, +c%p1Color%, p1burstUPGUI
-
-    GuiControl, +c%p2Color%, p2skillCDGUI
-    GuiControl, +c%p2Color%, p2skillUPGUI
-    GuiControl, +c%p2Color%, p2weaponUPGUI
-    GuiControl, +c%p2Color%, p2weaponCDGUI
-    GuiControl, +c%p2Color%, p2artifactUPGUI
-    GuiControl, +c%p2Color%, p2burstUPGUI
-
-    GuiControl, +c%p3Color%, p3skillCDGUI
-    GuiControl, +c%p3Color%, p3skillUPGUI
-    GuiControl, +c%p3Color%, p3weaponUPGUI
-    GuiControl, +c%p3Color%, p3weaponCDGUI
-    GuiControl, +c%p3Color%, p3artifactUPGUI
-    GuiControl, +c%p3Color%, p3burstUPGUI
-
-    GuiControl, +c%p4Color%, p4skillCDGUI
-    GuiControl, +c%p4Color%, p4skillUPGUI
-    GuiControl, +c%p4Color%, p4weaponUPGUI
-    GuiControl, +c%p4Color%, p4weaponCDGUI
-    GuiControl, +c%p4Color%, p4artifactUPGUI
-    GuiControl, +c%p4Color%, p4burstUPGUI
-
 }
 
 global runForABit:=A_TickCount+3000
+global runOnce:=True
 updateGUI() {
     If (runForABit>A_TickCount) {
         updateTeamColors()
         updateCurrentCharacter()
     }
+    If (runOnce==True) {
+        runOnce:=False
+        runForABit:=A_TickCount+3000
+    }
 
-    ; ******************* Skill Display *******************
-    ; Player 1
-    If (timestamps["skill", "delay", 1]<A_TickCount) {
-        timestampCD:= timeToText(timestamps["skill", "down", 1]-A_TickCount)
-        timestampUP:= timeToText(timestamps["skill", "up", 1]-A_TickCount)
-    } else {
-        timestampCD:= timeToText(-1)
-        timestampUP:= timeToText(-1)
-    }
-    GuiControl Text, p1skillCDGUI, %timestampCD%
-    GuiControl Text, p1skillUPGUI, %timestampUP%
-    ; Player 2
-    If (timestamps["skill", "delay", 2]<A_TickCount) {
-        timestampCD:= timeToText(timestamps["skill", "down", 2]-A_TickCount)
-        timestampUP:= timeToText(timestamps["skill", "up", 2]-A_TickCount)
-    } else {
-        timestampCD:= timeToText(-1)
-        timestampUP:= timeToText(-1)
-    }
-    GuiControl Text, p2skillCDGUI, %timestampCD%
-    GuiControl Text, p2skillUPGUI, %timestampUP%
-    ; Player 3
-    If (timestamps["skill", "delay", 3]<A_TickCount) {
-        timestampCD:= timeToText(timestamps["skill", "down", 3]-A_TickCount)
-        timestampUP:= timeToText(timestamps["skill", "up", 3]-A_TickCount)
-    } else {
-        timestampCD:= timeToText(-1)
-        timestampUP:= timeToText(-1)
-    }
-    GuiControl Text, p3skillCDGUI, %timestampCD%
-    GuiControl Text, p3skillUPGUI, %timestampUP%
-    ; Player 4
-    If (timestamps["skill", "delay", 4]<A_TickCount) {
-        timestampCD:= timeToText(timestamps["skill", "down", 4]-A_TickCount)
-        timestampUP:= timeToText(timestamps["skill", "up", 4]-A_TickCount)
-    } else {
-        timestampCD:= timeToText(-1)
-        timestampUP:= timeToText(-1)
-    }
-    GuiControl Text, p4skillCDGUI, %timestampCD%
-    GuiControl Text, p4skillUPGUI, %timestampUP%    
+    timestampTartaglia:=timestamps["tartaglia", "up"]
+    Loop, 4 {
+        ; Skill
+        If (currentData["party", A_Index]=="Tartaglia" && timestampTartaglia>0) {
+            timestampTartaglia := timeToText(A_TickCount-timestampTartaglia)
+            updateText("p" . A_Index . "skillCDGUI", timestampTartaglia)
+        } else {
+            If (timestamps["skill", "delay", A_Index]<A_TickCount) {
+                timestampCD:= timeToText(timestamps["skill", "down", A_Index]-A_TickCount)
+                timestampUP:= timeToText(timestamps["skill", "up", A_Index]-A_TickCount)
+            } else {
+                timestampCD:= timeToText(-1)
+                timestampUP:= timeToText(-1)
+            }
+            updateText("p" . A_Index . "skillCDGUI", timestampCD)
+            updateText("p" . A_Index . "skillUPGUI", timestampUP)
+        }
+        ; Burst
+        If (timestamps["burst", "delay", A_Index]<A_TickCount) {
+            timestampBurstUP := timeToText(timestamps["burst", "up", A_Index]-A_TickCount)
+        } else {
+            timestampBurstUP:= timeToText(-1)
+        }
+        updateText("p" . A_Index . "burstUPGUI", timestampBurstUP)
+        ; Weapon
+        timestampCD:= timeToText(timestamps["weapon", "down", A_Index]-A_TickCount)
+        timestampUP:= timeToText(timestamps["weapon", "up", A_Index]-A_TickCount)
+        updateText("p" . A_Index . "weaponCDGUI", timestampCD)
+        updateText("p" . A_Index . "weaponUPGUI", timestampUP)
+        ; Artifact
+        timestampUP:= timeToText(timestamps["artifact", "up", A_Index]-A_TickCount)
+        updateText("p" . A_Index . "artifactUPGUI", timestampUP)
+        }
+
 
     ; ******************* Shield Display *******************
     characterShield1 := "biedou"
@@ -544,94 +498,13 @@ updateGUI() {
     }
 
     element := configData["character", characterShield1, "element"]
-    elementColor := currentData["color", element]
+    elementColor := configData["color", element]
     GuiControl, +c%elementColor%, sheildGUI
 
     timestampShield:= timeToText(timestampShield1-A_TickCount)
 
-    GuiControl Text, sheildGUI, %timestampShield%
+    updateText("sheildGUI", timestampShield)
 
-    ; ******************* Tartaglia Display *******************
-    timestampTartaglia := timestamps["tartaglia", "up"]
-    If (timestampTartaglia>0) {
-        timestampTartaglia := timeToText(A_TickCount-timestampTartaglia)
-        switch currentData["characterNum"] {
-            case 1:
-                GuiControl Text, p1TartagliaGUI, %timestampTartaglia%
-            case 2:
-                GuiControl Text, p2TartagliaGUI, %timestampTartaglia%
-            case 3:
-                GuiControl Text, p3TartagliaGUI, %timestampTartaglia%
-            case 4:
-                GuiControl Text, p4TartagliaGUI, %timestampTartaglia%
-        }
-    }
-
-    ; ******************* Burst Display *******************
-    ; Player 1
-    If (timestamps["burst", "delay", 1]<A_TickCount) {
-        timestampBurstUP := timeToText(timestamps["burst", "up", 1]-A_TickCount)
-    } else {
-        timestampBurstUP:= timeToText(-1)
-    }
-    GuiControl Text, p1burstUPGUI, %timestampBurstUP%
-    ; Player 2
-    If (timestamps["burst", "delay", 2]<A_TickCount) {
-        timestampBurstUP := timeToText(timestamps["burst", "up", 2]-A_TickCount)
-    } else {
-        timestampBurstUP:= timeToText(-1)
-    }
-    GuiControl Text, p2burstUPGUI, %timestampBurstUP%
-    ; Player 3
-    If (timestamps["burst", "delay", 3]<A_TickCount) {
-        timestampBurstUP := timeToText(timestamps["burst", "up", 3]-A_TickCount)
-    } else {
-        timestampBurstUP:= timeToText(-1)
-    }
-    GuiControl Text, p3burstUPGUI, %timestampBurstUP%
-    ; Player 4
-    If (timestamps["burst", "delay", 4]<A_TickCount) {
-        timestampBurstUP := timeToText(timestamps["burst", "up", 4]-A_TickCount)
-    } else {
-        timestampBurstUP:= timeToText(-1)
-    }
-    GuiControl Text, p4burstUPGUI, %timestampBurstUP%
-
-    ; ******************* Weapon Display *******************
-    ; Player 1
-    timestampCD:= timeToText(timestamps["weapon", "down", 1]-A_TickCount)
-    timestampUP:= timeToText(timestamps["weapon", "up", 1]-A_TickCount)
-    GuiControl Text, p1weaponCDGUI, %timestampCD%
-    GuiControl Text, p1weaponUPGUI, %timestampUP%
-    ; Player 2
-    timestampCD:= timeToText(timestamps["weapon", "down", 2]-A_TickCount)
-    timestampUP:= timeToText(timestamps["weapon", "up", 2]-A_TickCount)
-    GuiControl Text, p2weaponCDGUI, %timestampCD%
-    GuiControl Text, p2weaponUPGUI, %timestampUP%
-    ; Player 3
-    timestampCD:= timeToText(timestamps["weapon", "down", 3]-A_TickCount)
-    timestampUP:= timeToText(timestamps["weapon", "up", 3]-A_TickCount)
-    GuiControl Text, p3weaponCDGUI, %timestampCD%
-    GuiControl Text, p3weaponUPGUI, %timestampUP%
-    ; Player 4
-    timestampCD:= timeToText(timestamps["weapon", "down", 4]-A_TickCount)
-    timestampUP:= timeToText(timestamps["weapon", "up", 4]-A_TickCount)
-    GuiControl Text, p4weaponCDGUI, %timestampCD%
-    GuiControl Text, p4weaponUPGUI, %timestampUP%
-
-    ; ******************* Artifact Display *******************
-    ; Player 1
-    timestampUP:= timeToText(timestamps["artifact", "up", 1]-A_TickCount)
-    GuiControl Text, p1artifactUPGUI, %timestampUP%
-    ; Player 2
-    timestampUP:= timeToText(timestamps["artifact", "up", 2]-A_TickCount)
-    GuiControl Text, p2artifactUPGUI, %timestampUP%
-    ; Player 3
-    timestampUP:= timeToText(timestamps["artifact", "up", 3]-A_TickCount)
-    GuiControl Text, p3artifactUPGUI, %timestampUP%
-    ; Player 4
-    timestampUP:= timeToText(timestamps["artifact", "up", 4]-A_TickCount)
-    GuiControl Text, p4artifactUPGUI, %timestampUP%
 }
 
 coopMode() {
@@ -668,24 +541,15 @@ enterCoop() {
         }
     }
     currentData["coop", "playerNumber"] := result
-    GuiControl move, p3skillCDGUI, x0 y0
-    GuiControl move, p4skillCDGUI, x0 y0
-    GuiControl move, p3TartagliaGUI, x0 y0
-    GuiControl move, p4TartagliaGUI, x0 y0
     If (result==1 && currentData["coop", "numOfPlayers"] == 3) {
         GuiControl move, p1skillCDGUI, x1517 y455
         GuiControl move, p2skillCDGUI, x1517 y551
-        GuiControl move, p1TartagliaGUI, x1517 y455
-        GuiControl move, p2TartagliaGUI, x1517 y551
     } else {
         If (currentData["coop", "numOfPlayers"] == 2) {
             GuiControl move, p1skillCDGUI, x1517 y410
             GuiControl move, p2skillCDGUI, x1517 y505
-            GuiControl move, p1TartagliaGUI, x1517 y410
-            GuiControl move, p2TartagliaGUI, x1517 y505
         } else {
             GuiControl move, p1skillCDGUI, x1517 y550
-            GuiControl move, p1TartagliaGUI, x1517 y550
         }
     }
 }
@@ -694,10 +558,37 @@ leaveCoop() {
     currentData["coop", "inCoop"] := "False"
     GuiControl move, p1skillCDGUI, x1517 y253
     GuiControl move, p2skillCDGUI, x1517 y348
-    GuiControl move, p3skillCDGUI, x1517 y444
-    GuiControl move, p4skillCDGUI, x1517 y541
-    GuiControl move, p1TartagliaGUI, x1517 y253
-    GuiControl move, p2TartagliaGUI, x1517 y348
-    GuiControl move, p3TartagliaGUI, x1517 y444
-    GuiControl move, p4TartagliaGUI, x1517 y541
+}
+
+guiColor(color, ControlID) {
+    GuiControl, +c%color%, %ControlID%
+}
+
+guiShow(ControlID) {
+    GuiControl Show, %ControlID%
+}
+
+guiHide(ControlID) {
+    GuiControl Hide, %ControlID%
+}
+
+updateText(ControlID, text) {
+    If (text=="0") {
+        GuiControl Hide, %ControlID%
+    } else {
+        GuiControl Show, %ControlID%
+        GuiControl Text, %ControlID%, %text%
+    }
+}
+
+timeToText(timeStamp) {
+    timeTempValue:=Round(timeStamp/1000, 1)
+    textOut:="" timeTempValue
+    If (timeTempValue<10) {
+        textOut:=A_Space . textOut
+    }
+    If (timeTempValue<=0) {
+        textOut:="0"
+    }
+    Return textOut
 }
