@@ -130,8 +130,11 @@ burstFunction(burstKey) {
             }
         Case "Rosaria":
             castTime:=1
-            burstCD:=8
-            burstUP:=15
+            burstCD:=15
+            burstUP:=8
+            If (currentData["character", "constellation"]>=2) {
+                burstUP+=4
+            }
         Case "Sara":
             castTime:=1
             burstCD:=20

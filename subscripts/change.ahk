@@ -13,6 +13,10 @@ changeCharacterLabel:
     changeCharacter(newNum)
 Return
 
+toggleCoopLabel:
+    coopMode()
+return
+
 changeCurrentParty(newNum) {
     timestamps := getDefaultTimestamp()
     If (newNum == 0) {
