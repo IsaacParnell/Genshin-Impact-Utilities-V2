@@ -23,7 +23,8 @@ skill:
                 }
             }
             skillCD:=15
-            If (currentData["character", "constellation"]>=4) { ;It's Not Just Any Doll...
+            If (currentData["character", "constellation"]>=4) { 
+                ;It's Not Just Any Doll...
                 skillCD*=0.8
             }
             skillUP:=9
@@ -34,7 +35,8 @@ skill:
             skillCastDelay:=0.1
         Case "Barbara":
             skillCD:=32
-            If (currentData["character", "constellation"]>=2) { ;Vitality Burst
+            If (currentData["character", "constellation"]>=2) { 
+                ;Vitality Burst
                 skillCD*=0.85
             }
             skillUP:=16
@@ -61,10 +63,12 @@ skill:
             } else {
                 skillCD:=5
             }
-            If (currentData["character", "ascension"]>=1) { ;Rekindle
+            If (currentData["character", "ascension"]>=1) { 
+                ;Rekindle
                 skillCD*=0.8
             }
-            If (currentData["character", "ascension"]>=4) { ;Fearnaught
+            If (currentData["character", "ascension"]>=4) { 
+                ;Fearnaught
                 If (timestamps["burst", "up", characterNum]>A_TickCount) {
                     skillCD*=0.5
                 }
@@ -134,13 +138,15 @@ skill:
                 }
                 skillCD:=25
                 skillUP:=10
-                If (currentData["character", "constellation"]>=6) { ;Evernight Raven
+                If (currentData["character", "constellation"]>=6) { 
+                    ;Evernight Raven
                     skillUP+=2
                 }
                 skillCastDelay:=0.25
             }
         Case "Ganyu":
-            If (currentData["character", "constellation"]>=2) { ;The Auspicious
+            If (currentData["character", "constellation"]>=2) { 
+                ;The Auspicious
                 If (currentPlayerSkillCD<0) {
                     skillCD:=10
                 } else If (currentPlayerSkillCD<10) {
@@ -198,6 +204,10 @@ skill:
                 skillCD:=currentPlayerSkillCD+20
             }
             skillCastDelay:=0.5
+        Case "Kokomi":
+            skillCD:=20
+            skillUP:=12
+            skillCastDelay:=0.4
         Case "Lisa":
             While getkeystate(skillKey, "P") {
                 If (A_TickCount-eDurationStartTime>=4300) {
@@ -262,7 +272,8 @@ skill:
             }
             skillCD:=6+5*((A_TickCount-eDurationStartTime)/10000)
         Case "Sucrose":
-            If (currentData["character", "constellation"]>=1) { ;Clustered Vacuum Field
+            If (currentData["character", "constellation"]>=1) { 
+                ;Clustered Vacuum Field
                 If (currentPlayerSkillCD<0) {
                     skillCD:=15
                 } else If (currentPlayerSkillCD<14.5) {
@@ -306,11 +317,13 @@ skill:
                 }
             }
             skillCD:=8
-            If (currentData["character", "ascension"]>=1) { ;Shattered Darkrock
+            If (currentData["character", "ascension"]>=1) { 
+                ;Shattered Darkrock
                 skillCD-=2
             }
             skillUP:=30
-            If (currentData["character", "constellation"]>=6) { ;Everlasting Boulder
+            If (currentData["character", "constellation"]>=6) { 
+                ;Everlasting Boulder
                 skillUP+=10
             }
             skillCastDelay:=0.3

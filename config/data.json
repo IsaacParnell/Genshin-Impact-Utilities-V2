@@ -180,6 +180,16 @@
             "ascension": 0,
             "constellation": 0
         },
+        "Kokomi": {
+            "codeName": "Kokomi",
+            "characterName": "Sangonomiya Kokomi",
+            "element": "Hydro",
+            "weaponType": "Catalysts",
+            "weapon": "Apprentice Notes",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
         "Lisa": {
             "codeName": "Lisa",
             "characterName": "Lisa",
