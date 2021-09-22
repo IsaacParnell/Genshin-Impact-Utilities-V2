@@ -32,7 +32,8 @@ burstFunction(burstKey) {
             castTime:=1
             burstCD:=20
             burstUP:=15
-            If (currentData["character", "constellation"]>=1) { ; Sea Beast's Scourge
+            If (currentData["character", "constellation"]>=1) { 
+                ; Sea Beast's Scourge
                 timestamps["shield", "biedou"] := A_TickCount+15000
             }
         Case "Bennett":
@@ -136,7 +137,8 @@ burstFunction(burstKey) {
             castTime:=1
             burstCD:=20
             burstUP:=15
-            If (currentData["character", "constellation"]>=1) { ;Awakening
+            If (currentData["character", "constellation"]>=1) { 
+                ;Awakening
                 skillCD:=0
             }
         Case "Rosaria":
@@ -158,7 +160,8 @@ burstFunction(burstKey) {
             castTime:=1
             burstCD:=20
             burstUP:=6
-            If (currentData["character", "constellation"]>=2) { ;Beth: Unbound Form
+            If (currentData["character", "constellation"]>=2) { 
+                ;Beth: Unbound Form
                 burstUP:=burstUP+2
             }
         Case "Tartaglia":
@@ -182,7 +185,8 @@ burstFunction(burstKey) {
             castTime:=1
             burstCD:=15
             burstUP:=15
-            If (currentData["character", "constellation"]>=6) { ;Everlasting Boulder
+            If (currentData["character", "constellation"]>=6) { 
+                ;Everlasting Boulder
                 burstUP:=burstUP+5
             }
         Case "Venti":
@@ -193,7 +197,8 @@ burstFunction(burstKey) {
             castTime:=1
             burstCD:=20
             burstUP:=10
-            If (currentData["character", "constellation"]>=4) { ;Slowbake
+            If (currentData["character", "constellation"]>=4) { 
+                ;Slowbake
                 burstUP:=burstUP*1.4
             }
         Case "Xiao":
@@ -204,14 +209,16 @@ burstFunction(burstKey) {
             castTime:=1
             burstCD:=20
             burstUP:=15
-            If (currentData["character", "constellation"]>=2) { ;Rainbow Upon the Azure Sky
+            If (currentData["character", "constellation"]>=2) { 
+                ;Rainbow Upon the Azure Sky
                 burstUP:=burstUP+3
             }
         Case "Xinyan":
             castTime:=1
             burstCD:=15
             burstUP:=2
-            If (currentData["character", "constellation"]>=2) { ;Impromptu Opening
+            If (currentData["character", "constellation"]>=2) { 
+                ;Impromptu Opening
                 timestamps["shield", "xinyan"] := A_TickCount+13000
             }
         Case "Yanfei":
@@ -241,16 +248,19 @@ burstFunction(burstKey) {
             If (currentData["character", "ascension"]>=6) {
                 burstUP=burstUP+0.2
             }
-            If (currentData["character", "constellation"]>=5) { ;Lazuli, Herald of the Order
+            If (currentData["character", "constellation"]>=5) { 
+                ;Lazuli, Herald of the Order
                 burstUP:=burstUP+0.2
             }
             If (burstUP>4) {
                 burstUP=4
             }
-            If (currentData["character", "constellation"]>=4) { ;Topaz, Unbreakable and Fearless
+            If (currentData["character", "constellation"]>=4) { 
+                ;Topaz, Unbreakable and Fearless
                 burstUP:=burstUP+2
             }
-            If (currentData["character", "constellation"]>=2) { ;Stone, the Cradle of Jade
+            If (currentData["character", "constellation"]>=2) { 
+                ;Stone, the Cradle of Jade
                 timestamps["shield", "zhongli"] := A_TickCount+20000
             }
         Default:
