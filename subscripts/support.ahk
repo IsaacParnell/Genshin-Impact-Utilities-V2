@@ -1,4 +1,4 @@
-global characterCodeNameArray := ["Albedo","Amber","Ayaka","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","Hu_Tao","Jean","Kaeya","Kazuha","Keqing","Klee","Lisa","Mona","Ningguang","Noelle","Qiqi","Raiden","Razor","Rosaria","Sara","Sayu","Sucrose","Tartaglia","Traveler_Anemo","Traveler_Electro","Traveler_Geo","Venti","Xiangling","Xiao","Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli"]
+global characterCodeNameArray := ["Albedo","Amber","Ayaka","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","Hu_Tao","Jean","Kaeya","Kazuha","Keqing","Klee","Kokomi","Lisa","Mona","Ningguang","Noelle","Qiqi","Raiden","Razor","Rosaria","Sara","Sayu","Sucrose","Tartaglia","Traveler_Anemo","Traveler_Electro","Traveler_Geo","Venti","Xiangling","Xiao","Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli"]
 
 invalidCharacter(inputCharacterName) {
     for index, element in characterCodeNameArray {
@@ -290,7 +290,10 @@ addParty() {
     currentPartyPlayer3 := "Albedo"
     currentPartyPlayer4 := "Albedo"
     invalidInput:=True
-    characterNames:="Albedo: Amber: Ayaka: Barbara: Beidou: Bennett: Chongyun: Diluc: Diona: Eula: Fischl: Ganyu: Hu_Tao: Jean: Kaeya: Kazuha: Keqing: Klee: Lisa: Mona: Ningguang: Noelle: Qiqi: Raiden: Razor: Rosaria: Sara: Sayu: Sucrose: Tartaglia: Traveler_Anemo: Traveler_Electro: Traveler_Geo: Venti: Xiangling: Xiao: Xingqiu: Xinyan: Yanfei: Yoimiya: Zhongli"
+    characterNames:=""
+    for index, element in characterCodeNameArray {
+        characterNames:=characterNames . element . ": "
+    }
     errorOcc:=False
     While, invalidInput {
         InputBox, currentPartyPlayer1 , Party Member 1's codeName, % characterNames

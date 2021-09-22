@@ -198,6 +198,10 @@ skill:
                 skillCD:=currentPlayerSkillCD+20
             }
             skillCastDelay:=0.5
+        Case "Kokomi":
+            skillCD:=20
+            skillUP:=12
+            skillCastDelay:=0.4
         Case "Lisa":
             While getkeystate(skillKey, "P") {
                 If (A_TickCount-eDurationStartTime>=4300) {
