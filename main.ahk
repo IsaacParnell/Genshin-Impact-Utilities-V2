@@ -33,10 +33,11 @@ Loop, 4 {
 }
 HotKey ~$5, changeCharacterLabel
 
-Loop, 9 {
+Loop, 8 {
     HotKey ~$*Numpad%A_Index%, changeCurrentPartyLabel
 }
 HotKey ~$*Numpad0,changeCurrentPartyLabel
+HotKey ~$*Numpad9,toggleCoopLabel
 
 Return
 

@@ -152,6 +152,11 @@ getDefaultCurrentData() {
                     "Geo": "FFE699",
                     "Hydro": "80DFFF",
                     "Pyro": "FF9999"
+                },
+                "coop": {
+                    "inCoop": "False",
+                    "numOfPlayer": "2",
+                    "playerNum": "1"
                 }
                 
             }
@@ -613,4 +618,72 @@ updateGUI() {
     ; Player 4
     timestampUP:= timeToText(timestamps["artifact", "up", 4]-A_TickCount)
     GuiControl Text, p4artifactUPGUI, %timestampUP%
+}
+
+coopMode() {
+    If (currentData["coop", "inCoop"] == "False") {
+        MsgBox, 4,, would you like to enter coop mode
+        IfMsgBox Yes 
+            enterCoop()
+    } else {
+        MsgBox, 4,, would you like to leave coop mode
+        IfMsgBox Yes 
+            leaveCoop()
+    }
+}
+
+enterCoop() {
+    currentData["coop", "inCoop"] := "True"
+    invalidInput:=True
+    While, invalidInput {
+        InputBox, result , Number of players total?
+        If (result<1 && result>4) {
+            MsgBox, Invalid Number
+        } else {
+            invalidInput := False
+        }
+    }
+    currentData["coop", "numOfPlayers"] := result
+    invalidInput:=True
+    While, invalidInput {
+        InputBox, result , Player number?
+        If (result<1 && result>4) {
+            MsgBox, Invalid Number
+        } else {
+            invalidInput := False
+        }
+    }
+    currentData["coop", "playerNumber"] := result
+    GuiControl move, p3skillCDGUI, x0 y0
+    GuiControl move, p4skillCDGUI, x0 y0
+    GuiControl move, p3TartagliaGUI, x0 y0
+    GuiControl move, p4TartagliaGUI, x0 y0
+    If (result==1 && currentData["coop", "numOfPlayers"] == 3) {
+        GuiControl move, p1skillCDGUI, x1517 y455
+        GuiControl move, p2skillCDGUI, x1517 y551
+        GuiControl move, p1TartagliaGUI, x1517 y455
+        GuiControl move, p2TartagliaGUI, x1517 y551
+    } else {
+        If (currentData["coop", "numOfPlayers"] == 2) {
+            GuiControl move, p1skillCDGUI, x1517 y410
+            GuiControl move, p2skillCDGUI, x1517 y505
+            GuiControl move, p1TartagliaGUI, x1517 y410
+            GuiControl move, p2TartagliaGUI, x1517 y505
+        } else {
+            GuiControl move, p1skillCDGUI, x1517 y550
+            GuiControl move, p1TartagliaGUI, x1517 y550
+        }
+    }
+}
+
+leaveCoop() {
+    currentData["coop", "inCoop"] := "False"
+    GuiControl move, p1skillCDGUI, x1517 y253
+    GuiControl move, p2skillCDGUI, x1517 y348
+    GuiControl move, p3skillCDGUI, x1517 y444
+    GuiControl move, p4skillCDGUI, x1517 y541
+    GuiControl move, p1TartagliaGUI, x1517 y253
+    GuiControl move, p2TartagliaGUI, x1517 y348
+    GuiControl move, p3TartagliaGUI, x1517 y444
+    GuiControl move, p4TartagliaGUI, x1517 y541
 }
