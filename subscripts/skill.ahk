@@ -288,6 +288,7 @@ skill:
                 tartagliaOff()
             } else {
                 timestamps["tartaglia", "up"]:=A_TickCount
+                skillCD:=0.1
             }
         Case "Traveler_Anemo":
             ; TODO

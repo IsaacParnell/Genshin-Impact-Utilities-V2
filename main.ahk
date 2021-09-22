@@ -76,11 +76,6 @@ global p2skillCDGUI:=0
 global p3skillCDGUI:=0
 global p4skillCDGUI:=0
 
-global p1TartagliaGUI:=0
-global p2TartagliaGUI:=0
-global p3TartagliaGUI:=0
-global p4TartagliaGUI:=0
-
 global p1skillUPGUI:=0
 global p2skillUPGUI:=0
 global p3skillUPGUI:=0
@@ -114,43 +109,38 @@ init_this_file() {
     Gui -caption +toolwindow +AlwaysOnTop
     Gui font, s18 bold, Arial
 
-    Gui add, text, x1517 y253 vp1skillCDGUI cWhite, 32.0
-    Gui add, text, x1517 y348 vp2skillCDGUI cWhite, 32.0
-    Gui add, text, x1517 y444 vp3skillCDGUI cWhite, 32.0
-    Gui add, text, x1517 y541 vp4skillCDGUI cWhite, 32.0
+    Gui add, text, x1517 y253 vp1skillCDGUI cWhite, 99.9
+    Gui add, text, x1517 y348 vp2skillCDGUI cWhite, 99.9
+    Gui add, text, x1517 y444 vp3skillCDGUI cWhite, 99.9
+    Gui add, text, x1517 y541 vp4skillCDGUI cWhite, 99.9
 
-    Gui add, text, x1517 y253 vp1TartagliaGUI cWhite, 32.0
-    Gui add, text, x1517 y348 vp2TartagliaGUI cWhite, 32.0
-    Gui add, text, x1517 y444 vp3TartagliaGUI cWhite, 32.0
-    Gui add, text, x1517 y541 vp4TartagliaGUI cWhite, 32.0
-    
-    Gui add, text, x1592 y623 vp1skillUPGUI cWhite, 32.0
-    Gui add, text, x1672 y623 vp2skillUPGUI cWhite, 32.0
-    Gui add, text, x1752 y623 vp3skillUPGUI cWhite, 32.0
-    Gui add, text, x1832 y623 vp4skillUPGUI cWhite, 32.0
+    Gui add, text, x1592 y623 vp1skillUPGUI cWhite, 99.9
+    Gui add, text, x1672 y623 vp2skillUPGUI cWhite, 99.9
+    Gui add, text, x1752 y623 vp3skillUPGUI cWhite, 99.9
+    Gui add, text, x1832 y623 vp4skillUPGUI cWhite, 99.9
 
-    Gui add, text, x789 y800 vp1weaponUPGUI cWhite, 32.0
-    Gui add, text, x884 y800 vp2weaponUPGUI cWhite, 32.0
-    Gui add, text, x989 y800 vp3weaponUPGUI cWhite, 32.0
-    Gui add, text, x1084 y800 vp4weaponUPGUI cWhite, 32.0
+    Gui add, text, x789 y800 vp1weaponUPGUI cWhite, 99.9
+    Gui add, text, x884 y800 vp2weaponUPGUI cWhite, 99.9
+    Gui add, text, x989 y800 vp3weaponUPGUI cWhite, 99.9
+    Gui add, text, x1084 y800 vp4weaponUPGUI cWhite, 99.9
 
-    Gui add, text, x789 y850 vp1weaponCDGUI cWhite, 32.0
-    Gui add, text, x884 y850 vp2weaponCDGUI cWhite, 32.0
-    Gui add, text, x989 y850 vp3weaponCDGUI cWhite, 32.0
-    Gui add, text, x1084 y850 vp4weaponCDGUI cWhite, 32.0
+    Gui add, text, x789 y850 vp1weaponCDGUI cWhite, 99.9
+    Gui add, text, x884 y850 vp2weaponCDGUI cWhite, 99.9
+    Gui add, text, x989 y850 vp3weaponCDGUI cWhite, 99.9
+    Gui add, text, x1084 y850 vp4weaponCDGUI cWhite, 99.9
 
-    Gui add, text, x600 y360 vp1artifactUPGUI cWhite, 32.0
-    Gui add, text, x600 y460 vp2artifactUPGUI cWhite, 32.0
-    Gui add, text, x600 y560 vp3artifactUPGUI cWhite, 32.0
-    Gui add, text, x600 y660 vp4artifactUPGUI cWhite, 32.0
+    Gui add, text, x600 y360 vp1artifactUPGUI cWhite, 99.9
+    Gui add, text, x600 y460 vp2artifactUPGUI cWhite, 99.9
+    Gui add, text, x600 y560 vp3artifactUPGUI cWhite, 99.9
+    Gui add, text, x600 y660 vp4artifactUPGUI cWhite, 99.9
 
     Gui font, s21 bold, Arial
-    Gui add, text, x780 y290 vp1burstUPGUI cWhite, 32.0
-    Gui add, text, x880 y290 vp2burstUPGUI cWhite, 32.0
-    Gui add, text, x980 y290 vp3burstUPGUI cWhite, 32.0
-    Gui add, text, x1080 y290 vp4burstUPGUI cWhite, 32.0
+    Gui add, text, x780 y290 vp1burstUPGUI cWhite, 99.9
+    Gui add, text, x880 y290 vp2burstUPGUI cWhite, 99.9
+    Gui add, text, x980 y290 vp3burstUPGUI cWhite, 99.9
+    Gui add, text, x1080 y290 vp4burstUPGUI cWhite, 99.9
 
-    Gui add, text, w200 x930 y970 vsheildGUI cWhite, 32.0
+    Gui add, text, w200 x930 y970 vsheildGUI cWhite, 99.9
     Gui Show, % "x" 0 " y" 0, TRANS-WIN
     WinSet TransColor, Black, TRANS-WIN
 
