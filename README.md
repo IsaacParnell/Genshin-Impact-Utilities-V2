@@ -32,4 +32,4 @@ TODO:
 - add pause option
 
 
-Updated for 2.1.0
+Updated for 2.2.0

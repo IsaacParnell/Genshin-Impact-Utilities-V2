@@ -16,6 +16,10 @@ skill:
             skillCD:=4
             skillUP:=30
             ; TODO skillCastDelay
+        Case "Aloy":
+            skillCD:=20
+            skillUP:=10
+            skillCastDelay:=0.3
         Case "Amber":
             While getkeystate(skillKey, "P") {
                 If (A_TickCount-eDurationStartTime>=6800) {
@@ -162,13 +166,12 @@ skill:
             skillUP:=9
         Case "Jean":
             While getkeystate(skillKey, "P") {
-                ; get max hold time
-                If (A_TickCount-eDurationStartTime>=6000) {
+                If (A_TickCount-eDurationStartTime>=5000) {
                     break
                 }
             }
             skillCD:=6
-            ; TODO skillCastDelay
+            skillCastDelay:=0.3
         Case "Kaeya":
             skillCD:=6
             skillCastDelay:=0.5

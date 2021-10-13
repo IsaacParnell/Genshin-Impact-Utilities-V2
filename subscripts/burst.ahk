@@ -16,6 +16,10 @@ burstFunction(burstKey) {
             castTime:=1
             burstCD:=12
             burstUP:=0
+        Case "Aloy":
+            castTime:=1
+            burstCD:=12
+            burstUP:=0
         Case "Amber":
             castTime:=1
             burstCD:=12
@@ -77,9 +81,8 @@ burstFunction(burstKey) {
             burstUP:=15
         Case "Jean":
             castTime:=1
-            ; TODO not sure on uptime
             burstCD:=20
-            burstUP:=12
+            burstUP:=10
         Case "Kaeya":
             castTime:=1
             burstCD:=15
