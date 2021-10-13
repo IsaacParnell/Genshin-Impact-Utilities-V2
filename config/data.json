@@ -10,6 +10,16 @@
             "ascension": 0,
             "constellation": 0
         },
+        "Aloy": {
+            "codeName": "Aloy",
+            "characterName": "Aloy",
+            "element": "Cryo",
+            "weaponType": "Bow",
+            "weapon": "Hunter Bow",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
         "Amber": {
             "codeName": "Amber",
             "characterName": "Amber",
