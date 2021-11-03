@@ -304,6 +304,10 @@ skill:
                 timestamps["tartaglia", "up"]:=A_TickCount
                 skillCD:=0.1
             }
+        Case "Thoma":
+            skillCD:=15
+            skillCastDelay:=0.25
+            timestamps["shield", "thoma"] := A_TickCount+8000
         Case "Traveler_Anemo":
             ; TODO
             While getkeystate(skillKey, "P") {

@@ -1,4 +1,4 @@
-global characterCodeNameArray := ["Albedo","Aloy","Amber","Ayaka","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","Hu_Tao","Jean","Kaeya","Kazuha","Keqing","Klee","Kokomi","Lisa","Mona","Ningguang","Noelle","Qiqi","Raiden","Razor","Rosaria","Sara","Sayu","Sucrose","Tartaglia","Traveler_Anemo","Traveler_Electro","Traveler_Geo","Venti","Xiangling","Xiao","Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli"]
+global characterCodeNameArray := ["Albedo","Aloy","Amber","Ayaka","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","Hu_Tao","Jean","Kaeya","Kazuha","Keqing","Klee","Kokomi","Lisa","Mona","Ningguang","Noelle","Qiqi","Raiden","Razor","Rosaria","Sara","Sayu","Sucrose","Tartaglia","Thoma","Traveler_Anemo","Traveler_Electro","Traveler_Geo","Venti","Xiangling","Xiao","Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli"]
 
 invalidCharacter(inputCharacterName) {
     for index, element in characterCodeNameArray {
@@ -185,6 +185,7 @@ getDefaultTimestamp() {
                     "biedou": 0,
                     "diona": 0,
                     "noelle": 0,
+                    "thoma": 0,
                     "xinyan": 0,
                     "zhongli": 0
                 },
@@ -485,6 +486,12 @@ updateGUI() {
         characterShield1 := characterShield2
     }
     characterShield2 := "noelle"
+    timestampShield2 := timestamps["shield", characterShield2]
+    If (timestampShield2>timestampShield1) {
+        timestampShield1 := timestampShield2
+        characterShield1 := characterShield2
+    }
+    characterShield2 := "thoma"
     timestampShield2 := timestamps["shield", characterShield2]
     If (timestampShield2>timestampShield1) {
         timestampShield1 := timestampShield2
