@@ -268,7 +268,6 @@ skill:
             }
             skillCastDelay:=0.2
         Case "Sayu":
-            initalPressTimestamp:=A_TickCount
             hold:=false
             While getkeystate(skillKey, "P") {
                 If (A_TickCount-eDurationStartTime>=300) {
@@ -279,7 +278,7 @@ skill:
                 }
             }
             While (!getkeystate(skillKey, "P") && !getkeystate(jumpKey, "P")) {
-                If (hold==false || initalPressTimestamp+11000<A_TickCount) {
+                If (hold==false || eDurationStartTime+11000<A_TickCount) {
                     skillCastDelay:=0.5
                     break
                 }
@@ -304,6 +303,10 @@ skill:
                 timestamps["tartaglia", "up"]:=A_TickCount
                 skillCD:=0.1
             }
+        Case "Thoma":
+            skillCD:=15
+            skillCastDelay:=0.25
+            timestamps["shield", "thoma"] := A_TickCount+8000
         Case "Traveler_Anemo":
             ; TODO
             While getkeystate(skillKey, "P") {

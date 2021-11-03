@@ -176,6 +176,11 @@ burstFunction(burstKey) {
                     currentData["conditions" , "tartagliaHavoc_Annihilation"] := True
                 }
             }
+        Case "Thoma":
+            castTime:=1
+            burstCD:=20
+            burstUP:=15
+            timestamps["shield", "thoma"] := A_TickCount+8000+15000+1000
         Case "Traveler_Anemo":
             castTime:=1
             burstCD:=15

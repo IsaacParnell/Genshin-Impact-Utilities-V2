@@ -320,6 +320,16 @@
             "ascension": 0,
             "constellation": 0
         },
+        "Thoma": {
+            "codeName": "Thoma",
+            "characterName": "Thoma",
+            "element": "Pyro",
+            "weaponType": "Polearm",
+            "weapon": "Beginner Protector",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
         "Traveler_Anemo": {
             "codeName": "Traveler_Anemo",
             "characterName": "Traveler",
