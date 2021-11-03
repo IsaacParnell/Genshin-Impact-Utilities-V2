@@ -268,8 +268,19 @@ skill:
             }
             skillCastDelay:=0.2
         Case "Sayu":
+            initalPressTimestamp:=A_TickCount
+            hold:=false
             While getkeystate(skillKey, "P") {
-                If (A_TickCount-eDurationStartTime>=10000) {
+                If (A_TickCount-eDurationStartTime>=300) {
+                    hold:=True
+                }
+                If (A_TickCount-eDurationStartTime>=11000) {
+                    break
+                }
+            }
+            While (!getkeystate(skillKey, "P") && !getkeystate(jumpKey, "P")) {
+                If (hold==false || initalPressTimestamp+11000<A_TickCount) {
+                    skillCastDelay:=0.5
                     break
                 }
             }
