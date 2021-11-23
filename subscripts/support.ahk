@@ -71,8 +71,11 @@ getConfigData() {
     }
     configData := JSON_load("config\config.json")
 
+    needReload := false
+
     for index, element in characterCodeNameArray {
         If (configData["character", element, "codeName"] != element) {
+            needReload := true
             configData := JSON_load("config\config.json")
             New_Var := ""
             Original_Var := JSON_to(configData["character"])
@@ -89,6 +92,10 @@ getConfigData() {
             IfMsgBox Yes 
                 askCharacterQuestions(element)
         }
+    }
+
+    If (needReload) {
+        Reload
     }
 
     return configData
