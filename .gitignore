@@ -3,6 +3,5 @@ starter.vbs
 config/config.json
 config/party.json
 characters.txt
-media/*
 subscripts/extra.ahk
 subscripts/attack.ahk
