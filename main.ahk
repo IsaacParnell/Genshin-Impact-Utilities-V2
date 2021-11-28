@@ -6,7 +6,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #EscapeChar `
 #CommentFlag ;
 
-
 #Include, %A_ScriptDir%\subscripts\support.ahk
 
 global partyData := getPartyData()
@@ -22,8 +21,7 @@ Loop, 4 {
 global skillKey := configData["keybind", "skill"]
 global burstKey := configData["keybind", "burst"]
 global pauseKey := configData["keybind", "pause"]
-
-global pauseScript:=True
+global pauseScript := True
 
 HotKey, IfWinActive, ahk_exe GenshinImpact.exe
 
@@ -46,6 +44,9 @@ HotKey $%pauseKey%,pauseInput
 
 Return
 
+pauseInput:
+    pauseScript := !pauseScript
+Return
 
 #Include, %A_ScriptDir%\subscripts\burst.ahk
 #Include, %A_ScriptDir%\subscripts\skill.ahk

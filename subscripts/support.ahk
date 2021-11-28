@@ -607,11 +607,3 @@ timeToText(timeStamp) {
     }
     Return textOut
 }
-
-pauseInput:
-    If (pauseScript) {
-        pauseScript:=False
-    } else {
-        pauseScript:=True
-    }
-Return
