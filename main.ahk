@@ -24,10 +24,10 @@ global burstKey := configData["keybind", "burst"]
 global interactKey := configData["keybind", "interact"]
 global jumpKey := configData["keybind", "jump"]
 global sprintKey := configData["keybind", "sprint"]
-global toggleSprintMacroKey := configData["keybind", "toggleSprint"]
+global pauseKey := configData["keybind", "pause"]
 global jumpMacroKey := configData["keybind", "jumpMacro"]
 global attackMacroKey := configData["keybind", "attackMacro"]
-global sprintScript:=True
+global pauseScript:=True
 
 
 HotKey, IfWinActive, ahk_exe GenshinImpact.exe
@@ -50,7 +50,7 @@ HotKey ~$*Numpad9,toggleCoopLabel
 HotKey $*%interactKey%,interactMacro
 HotKey $%sprintKey%,sprintMacro
 HotKey $%jumpMacroKey%,jumpMacro
-HotKey $%toggleSprintMacroKey%,toggleSprintMacro
+HotKey $%pauseKey%,pauseInput
 HotKey $%attackMacroKey%,attackMacro ; delete this line to remove attack macro
 
 Return

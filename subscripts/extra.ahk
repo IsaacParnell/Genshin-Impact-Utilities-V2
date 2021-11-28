@@ -4,14 +4,16 @@ RandSleep(x, y) {
 }
 
 interactMacro:
-    while getkeystate(interactKey, "P") {
-        Sendinput,{%interactKey%}
-        RandSleep(100, 150)
+    If (pauseScript) {
+        while getkeystate(interactKey, "P") {
+            Sendinput,{%interactKey%}
+            RandSleep(100, 150)
+        }
     }
 Return
 
 sprintMacro: 
-    If (sprintScript) {
+    If (pauseScript) {
         while getkeystate("LShift", "P") {
             Sendinput,{Shift Down}
             RandSleep(50,80)
@@ -27,16 +29,10 @@ sprintMacro:
 Return
 
 jumpMacro:
-    while getkeystate(jumpMacroKey, "P") {
-        Sendinput,{space}
-        RandSleep(100, 150)
-    }
-Return
-
-toggleSprintMacro:
-    If (sprintScript) {
-        sprintScript:=False
-    } else {
-        sprintScript:=True
+    If (pauseScript) {
+        while getkeystate(jumpMacroKey, "P") {
+            Sendinput,{space}
+            RandSleep(100, 150)
+        }
     }
 Return

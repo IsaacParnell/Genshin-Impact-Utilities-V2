@@ -20,6 +20,10 @@ Artifact to left of character
 
 Key binds:
 
+- Numpad 1-8 for parties
+- Numpad 0 to change current party
+- Numpad 9 to toggle coop
+- LCrtl to pause key capture
 
 Config:
 
@@ -27,9 +31,6 @@ Config:
 
 TODO:
 
-- better include cast animation
-- add coop mode (change ability locations)
-- add pause option
-
+- Add 5th trail character
 
 Updated for 2.2.0

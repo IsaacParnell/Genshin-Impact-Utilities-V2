@@ -57,7 +57,7 @@ getConfigData() {
                     "interact": "f",
                     "jump": "space",
                     "sprint": "LShift",
-                    "toggleSprint": "LCtrl",
+                    "pause": "LCtrl",
                     "jumpMacro": "XButton1",
                     "attackMacro": "XButton2"
                 },
@@ -605,3 +605,11 @@ timeToText(timeStamp) {
     }
     Return textOut
 }
+
+pauseInput:
+    If (pauseScript) {
+        pauseScript:=False
+    } else {
+        pauseScript:=True
+    }
+Return
