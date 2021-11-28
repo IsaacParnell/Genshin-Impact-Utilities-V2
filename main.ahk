@@ -6,7 +6,6 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 #EscapeChar `
 #CommentFlag ;
 
-
 #Include, %A_ScriptDir%\subscripts\support.ahk
 
 global partyData := getPartyData()
@@ -24,11 +23,11 @@ global burstKey := configData["keybind", "burst"]
 global interactKey := configData["keybind", "interact"]
 global jumpKey := configData["keybind", "jump"]
 global sprintKey := configData["keybind", "sprint"]
-global pauseKey := configData["keybind", "pause"]
 global jumpMacroKey := configData["keybind", "jumpMacro"]
 global attackMacroKey := configData["keybind", "attackMacro"]
-global pauseScript:=True
 
+global pauseKey := configData["keybind", "pause"]
+global pauseScript := True
 
 HotKey, IfWinActive, ahk_exe GenshinImpact.exe
 
@@ -50,11 +49,14 @@ HotKey ~$*Numpad9,toggleCoopLabel
 HotKey $*%interactKey%,interactMacro
 HotKey $%sprintKey%,sprintMacro
 HotKey $%jumpMacroKey%,jumpMacro
-HotKey $%pauseKey%,pauseInput
 HotKey $%attackMacroKey%,attackMacro ; delete this line to remove attack macro
+HotKey $%pauseKey%,pauseInput
 
 Return
 
+pauseInput:
+    pauseScript := !pauseScript
+Return
 
 #Include, %A_ScriptDir%\subscripts\burst.ahk
 #Include, %A_ScriptDir%\subscripts\skill.ahk
