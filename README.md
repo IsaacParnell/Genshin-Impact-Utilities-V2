@@ -29,5 +29,8 @@ Config:
 
 - Configure file is in config folder (don't touch data.json)
 
+TODO:
+
+- Add 5th trail Character
 
 Updated for 2.2.0

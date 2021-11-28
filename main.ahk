@@ -21,6 +21,9 @@ Loop, 4 {
 
 global skillKey := configData["keybind", "skill"]
 global burstKey := configData["keybind", "burst"]
+global pauseKey := configData["keybind", "pause"]
+
+global pauseScript:=True
 
 HotKey, IfWinActive, ahk_exe GenshinImpact.exe
 
@@ -38,6 +41,8 @@ Loop, 8 {
 }
 HotKey ~$*Numpad0,changeCurrentPartyLabel
 HotKey ~$*Numpad9,toggleCoopLabel
+
+HotKey $%pauseKey%,pauseInput
 
 Return
 
