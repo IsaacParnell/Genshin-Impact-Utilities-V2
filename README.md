@@ -31,6 +31,6 @@ Config:
 
 TODO:
 
-- Add 5th trail Character
+- Add 5th trial Character
 
 Updated for 2.2.0
