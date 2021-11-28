@@ -1,6 +1,8 @@
 burst:
-    burstFunction(burstKey)
-    While getkeystate(burstKey, "P") {
+    If (pauseScript) {
+        burstFunction(burstKey)
+        While getkeystate(burstKey, "P") {
+        }
     }
 return
 

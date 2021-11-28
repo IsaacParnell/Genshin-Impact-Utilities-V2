@@ -53,7 +53,8 @@ getConfigData() {
                 },
                 "keybind" : {
                     "skill": "e",
-                    "burst": "q"
+                    "burst": "q",
+                    "pause": "LCtrl",
                 },
                 "color" : {
                     "Anemo": "80FFD7",
@@ -606,3 +607,11 @@ timeToText(timeStamp) {
     }
     Return textOut
 }
+
+pauseInput:
+    If (pauseScript) {
+        pauseScript:=False
+    } else {
+        pauseScript:=True
+    }
+Return

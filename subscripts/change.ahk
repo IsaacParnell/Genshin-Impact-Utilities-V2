@@ -1,20 +1,28 @@
 changeCurrentPartyLabel:
-    StringRight, newNum, A_ThisHotkey, 1
-    changeCurrentParty(newNum)
+    If (pauseScript) {
+        StringRight, newNum, A_ThisHotkey, 1
+        changeCurrentParty(newNum)
+    }
 Return
 
 burstCharacterLabel:
-    StringRight, newNum, A_ThisHotkey, 1
-    burstCharacter(newNum)
+    If (pauseScript) {
+        StringRight, newNum, A_ThisHotkey, 1
+        burstCharacter(newNum)
+    }
 Return
 
 changeCharacterLabel:
-    StringRight, newNum, A_ThisHotkey, 1
-    changeCharacter(newNum)
+    If (pauseScript) {
+        StringRight, newNum, A_ThisHotkey, 1
+        changeCharacter(newNum)
+    }
 Return
 
 toggleCoopLabel:
-    coopMode()
+    If (pauseScript) {
+        coopMode()
+    }
 return
 
 changeCurrentParty(newNum) {
