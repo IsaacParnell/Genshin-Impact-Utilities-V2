@@ -9,6 +9,8 @@ interactMacro:
             Sendinput,{%interactKey%}
             RandSleep(100, 150)
         }
+    } Else {
+        SendInput, {%interactKey%}
     }
 Return
 
@@ -34,5 +36,7 @@ jumpMacro:
             Sendinput,{space}
             RandSleep(100, 150)
         }
+    } Else {
+        SendInput, {%jumpMacroKey%}
     }
 Return
