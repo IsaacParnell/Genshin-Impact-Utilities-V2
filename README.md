@@ -20,16 +20,14 @@ Artifact to left of character
 
 Key binds:
 
+- Numpad 1-8 for parties
+- Numpad 0 to change current party
+- Numpad 9 to toggle coop
+- LCrtl to pause key capture
 
 Config:
 
 - Configure file is in config folder (don't touch data.json)
-
-TODO:
-
-- better include cast animation
-- add coop mode (change ability locations)
-- add pause option
 
 
 Updated for 2.2.0
