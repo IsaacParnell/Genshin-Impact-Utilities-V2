@@ -76,11 +76,22 @@ burstFunction(burstKey) {
             ; TODO not sure on uptime
             burstCD:=15
             burstUP:=15
+        Case "Goruo":
+            castTime:=1
+            burstCD:=20
+            burstUP:=9
         Case "Hu_Tao":
             castTime:=1
             ; TODO not sure on uptime
             burstCD:=15
             burstUP:=15
+        Case "Itto":
+            castTime:=1.5
+            burstCD:=18
+            If (currentData["character", "constellation"]>=1) {
+                skillCD-=1.5
+            }
+            burstUP:=11
         Case "Jean":
             castTime:=1
             burstCD:=20
@@ -161,6 +172,13 @@ burstFunction(burstKey) {
             castTime:=1
             burstCD:=20
             burstUP:=12
+        Case "Shenhe":
+            castTime:=1.5
+            burstCD:=20
+            burstUP:=12
+            If (currentData["character", "constellation"]>=2) { 
+                burstUP+=6
+            }
         Case "Sucrose":
             castTime:=1
             burstCD:=20
@@ -235,6 +253,10 @@ burstFunction(burstKey) {
             castTime:=1
             burstCD:=20
             burstUP:=15
+        Case "Yun_Jin":
+            castTime:=1
+            burstCD:=15
+            burstUP:=12
         Case "Yoimiya":
             castTime:=1
             burstCD:=15

@@ -1,4 +1,4 @@
-global characterCodeNameArray := ["Albedo","Aloy","Amber","Ayaka","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","Hu_Tao","Jean","Kaeya","Kazuha","Keqing","Klee","Kokomi","Lisa","Mona","Ningguang","Noelle","Qiqi","Raiden","Razor","Rosaria","Sara","Sayu","Sucrose","Tartaglia","Thoma","Traveler_Anemo","Traveler_Electro","Traveler_Geo","Venti","Xiangling","Xiao","Xingqiu","Xinyan","Yanfei","Yoimiya","Zhongli"]
+global characterCodeNameArray := ["Albedo","Aloy","Amber","Ayaka","Barbara","Beidou","Bennett","Chongyun","Diluc","Diona","Eula","Fischl","Ganyu","Gorou","Hu_Tao","Itto","Jean","Kaeya","Kazuha","Keqing","Klee","Kokomi","Lisa","Mona","Ningguang","Noelle","Qiqi","Raiden","Razor","Rosaria","Sara","Sayu","Shenhe","Sucrose","Tartaglia","Thoma","Traveler_Anemo","Traveler_Electro","Traveler_Geo","Venti","Xiangling","Xiao","Xingqiu","Xinyan","Yanfei","Yoimiya","Yun_Jin","Zhongli"]
 
 invalidCharacter(inputCharacterName) {
     for index, element in characterCodeNameArray {

@@ -161,10 +161,25 @@ skill:
                     skillCD:=10
                 }
                 skillUP:=6
-                ; TODO skillCastDelay
+            Case "Gorou":
+                While getkeystate(skillKey, "P") {
+                    If (A_TickCount-eDurationStartTime>=15000) {
+                        break
+                    }
+                }
+                skillCD:=10
+                skillUP:=10
             Case "Hu_Tao":
                 skillCD:=16
                 skillUP:=9
+            Case "Itto":
+                While getkeystate(skillKey, "P") {
+                    If (A_TickCount-eDurationStartTime>=15000) {
+                        break
+                    }
+                }
+                skillCD:=10
+                skillUP:=6
             Case "Jean":
                 While getkeystate(skillKey, "P") {
                     If (A_TickCount-eDurationStartTime>=5000) {
@@ -269,7 +284,6 @@ skill:
                 }
                 skillCastDelay:=0.2
             Case "Sayu":
-                initalPressTimestamp:=A_TickCount
                 hold:=false
                 While getkeystate(skillKey, "P") {
                     If (A_TickCount-eDurationStartTime>=300) {
@@ -280,12 +294,22 @@ skill:
                     }
                 }
                 While (!getkeystate(skillKey, "P") && !getkeystate(jumpKey, "P")) {
-                    If (hold==false || initalPressTimestamp+11000<A_TickCount) {
+                    If (hold==false || eDurationStartTime+11000<A_TickCount) {
                         skillCastDelay:=0.5
                         break
                     }
                 }
                 skillCD:=6+5*((A_TickCount-eDurationStartTime)/10000)
+            Case "Shenhe":
+                skillCD:=10
+                skillUP:=10
+                While getkeystate(skillKey, "P") {
+                    If (A_TickCount-eDurationStartTime>=2000) {
+                        skillCD:=15
+                        skillUP:=15
+                        break
+                    }
+                }
             Case "Sucrose":
                 If (currentData["character", "constellation"]>=1) { 
                     ;Clustered Vacuum Field
@@ -376,13 +400,24 @@ skill:
                 skillCD:=18
                 timestamps["shield", "xinyan"] := A_TickCount+13000
                 skillCastDelay:=0.25
+            Case "Yanfei":
+                skillCD:=9
+                ; TODO skillCastDelay
+            Case "Yun_Jin":
+                While getkeystate(skillKey, "P") {
+                    If (A_TickCount-eDurationStartTime>3000) {
+                        break
+                    }
+                }
+                skillCD:=9
+                If (currentData["character", "constellation"]>=6) { 
+                    ;Thespian Gallop
+                    skillCD*=0.82
+                }
             Case "Yoimiya":
                 skillCD:=18
                 skillUP:=10
                 skillCastDelay:=0.5
-            Case "Yanfei":
-                skillCD:=9
-                ; TODO skillCastDelay
             Case "Zhongli":
                 While getkeystate(skillKey, "P") {
                 ; // TODO get proper time
