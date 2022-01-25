@@ -130,12 +130,32 @@
             "ascension": 0,
             "constellation": 0
         },
+        "Gorou": {
+            "codeName": "Gorou",
+            "characterName": "Gorou",
+            "element": "Geo",
+            "weaponType": "Bow",
+            "weapon": "Hunter Bow",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
         "Hu_Tao": {
             "codeName": "Hu_Tao",
             "characterName": "Hu Tao",
             "element": "Pyro",
             "weaponType": "Polearm",
             "weapon": "Beginner Protector",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Itto": {
+            "codeName": "Itto",
+            "characterName": "Arataki Itto",
+            "element": "Geo",
+            "weaponType": "Claymore",
+            "weapon": "Waster Greatsword",
             "artifactSet" : "None",
             "ascension": 0,
             "constellation": 0
@@ -162,7 +182,7 @@
         },
         "Kazuha": {
             "codeName": "Kazuha",
-            "characterName": "Kaedehara Kazuha ",
+            "characterName": "Kaedehara Kazuha",
             "element": "Anemo",
             "weaponType": "Sword",
             "weapon": "Dull Blade",
@@ -300,6 +320,16 @@
             "ascension": 0,
             "constellation": 0
         },
+        "Shenhe": {
+            "codeName": "Shenhe",
+            "characterName": "Shenhe",
+            "element": "Cryo",
+            "weaponType": "Polearm",
+            "weapon": "Beginner Protector",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
         "Sucrose": {
             "codeName": "Sucrose",
             "characterName": "Sucrose",
@@ -416,6 +446,16 @@
             "element": "Pyro",
             "weaponType": "Catalysts",
             "weapon": "Apprentice Notes",
+            "artifactSet" : "None",
+            "ascension": 0,
+            "constellation": 0
+        },
+        "Yun_Jin": {
+            "codeName": "Yun_Jin",
+            "characterName": "Yun Jin",
+            "element": "Geo",
+            "weaponType": "Polearm",
+            "weapon": "Beginner Protector",
             "artifactSet" : "None",
             "ascension": 0,
             "constellation": 0
